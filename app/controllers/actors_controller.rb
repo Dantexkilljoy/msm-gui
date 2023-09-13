@@ -3,7 +3,6 @@ class ActorsController < ApplicationController
     matching_actors = Actor.all
     @list_of_actors = matching_actors.order({ :created_at => :desc })
 
-    render({ :template => "actor_templates/index" })
   end
 
   def show
@@ -12,6 +11,5 @@ class ActorsController < ApplicationController
     matching_actors = Actor.where({ :id => the_id })
     @the_actor = matching_actors.at(0)
       
-    render({ :template => "actor_templates/show" })
   end
 end

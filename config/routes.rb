@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get "/movies/:path_id", to: "movies#show"
 
   get "/actors", to: "actors#index"
-  get "/actors/path_id", to: "actors#show"
+  get "/actors/:path_id", to: "actors#show"
 
 end
