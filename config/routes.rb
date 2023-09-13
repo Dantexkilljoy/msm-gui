@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
-  get("/", { :controller => "misc", :action => "homepage" })
 
-  get("/directors/youngest", { :controller => "directors", :action => "max_dob" })
-  get("/directors/eldest", { :controller => "directors", :action => "min_dob" })
+  root to: "misc#index"
 
-  get("/directors", { :controller => "directors", :action => "index" })
-  get("/directors/:path_id", { :controller => "directors", :action => "show" })
+  get "/directors/youngest", to: "directors#youngest"
+  get "/directors/eldest", to: "directors#eldest"
 
-  get("/movies", { :controller => "movies", :action => "index" })
-  get("/movies/:path_id", { :controller => "movies", :action => "show" })
-  
-  get("/actors", { :controller => "actors", :action => "index" })
-  get("/actors/:path_id", { :controller => "actors", :action => "show" })
+  get "/directors", to: "directors#index"
+  get "directors/:path_id", to: "directors#show"
+
+  get "/movies", to: "movies#index"
+  get "/movies/:path_id", to: "movies#show"
+
+  get "/actors", to: "actors#index"
+  get "/actors/path_id", to: "actors#show"
+
 end

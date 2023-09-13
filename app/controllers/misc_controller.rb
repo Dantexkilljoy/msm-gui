@@ -1,5 +1,4 @@
 class MiscController < ApplicationController
-  def homepage
-    render({ :template => "misc_templates/home"})
+  def index
   end
 end
